@@ -23,6 +23,7 @@ output:
       highlightLines: true
       countIncrementalSlides: false
       ratio: "16:9"
+      # ratio: "191:100" # para gerar imagem para compartilhar
 # knit: pagedown::chrome_print
 ---
 
@@ -35,11 +36,15 @@ knitr::opts_chunk$set(echo = FALSE,
                       fig.retina = 3,
                       out.width = "100%")
 suppressPackageStartupMessages(library("knitr"))
+suppressPackageStartupMessages(library("dplyr"))
+suppressPackageStartupMessages(library("emoji"))
+suppressPackageStartupMessages(library("xaringanthemer"))
+suppressPackageStartupMessages(library("metathis"))
+suppressPackageStartupMessages(library("knitcitations"))
 # xaringan::summon_remark()# para trabalhar offline!
 ```
 
 ```{r xaringan-themer, include=FALSE}
-library("xaringanthemer")
 style_mono_light(
   base_color = "#23395b",
   inverse_link_color = "#E9EBEE",
@@ -53,18 +58,46 @@ style_mono_light(
 xaringanExtra::use_xaringan_extra(c("tile_view", "tachyons"))
 ```
 
-```{r emoji, include=FALSE}
-library("emoji")
-desespero <- 
-  emojis %>% filter(name == "person facepalming") %>% 
-  .[["emoji"]]
-fantasma <- 
-  emojis %>% 
-  # filter(grepl("ghost", name))
-  filter(name == "ghost") %>%
-  .[["emoji"]]
+```{r xaringanExtra-share-again, include=FALSE}
+xaringanExtra::use_share_again()
 ```
 
+```{r emoji, include=FALSE}
+desespero <- 
+  emojis |> filter(name == "person facepalming") |> 
+  pull(emoji)
+fantasma <- 
+  emojis |> 
+  # filter(grepl("ghost", name))
+  filter(name == "ghost") |>
+  pull(emoji)
+```
+
+```{r metathis, include=FALSE}
+meta() |>
+  meta_name("github-repo" = "ricoperdiz/2024_02_Rmrkdn_Ciencia") |>
+  meta_social(
+    title = "Rmarkdown: comunicação, transparência e reprodutibilidade",
+    description = paste(
+      "Palestra de autoria de Ricardo Perdiz sobre o uso do pacote `rmarkdown` para a comunicação, transparência quanto à análise de dados e reprodutibilidade,",
+      "apresentada dentro da disciplina de 'Comunicação Científica' ministrada pelo professor Dr. Reinaldo Imbrozio Barbosa (INPA)",
+      "e ofertada no Programa de Pós-graduação em Recursos Naturais (PRONAT) da Universidade Federal de Roraima."
+    ),
+    url = "https://2024_02_rmrkdn_ciencia.netlify.app",
+    image = "https://github.com/ricoperdiz/2024_02_Rmrkdn_Ciencia/images/slide_abertura_divulgacao.png",
+    image_alt = paste(
+      "Slide de abertura da palestra `Rmarkdown:",
+      " comunicação, transparência e reprodutibilidade`,",
+      "apresentada dentro da disciplina de 'Comunicação Científica' ministrada pelo professor Dr. Reinaldo Imbrozio Barbosa (INPA)",
+      "e ofertada no Programa de Pós-graduação em Recursos Naturais (PRONAT) da Universidade Federal de Roraima."
+    ),
+    og_type = "website",
+    og_author = "R. O. Perdiz",
+    twitter_card_type = "summary_large_image",
+    twitter_creator = "@ricoperdiz",
+    twitter_site = "@ricoperdiz"
+  )
+```
 
 class: left, middle
 background-image: url("images/slide_abertura.png")
