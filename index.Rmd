@@ -84,7 +84,7 @@ meta() |>
       "e ofertada no Programa de Pós-graduação em Recursos Naturais (PRONAT) da Universidade Federal de Roraima."
     ),
     url = "https://rmrkdn-ciencia-reprodutib-2024-02.netlify.app",
-    image = "https://github.com/ricoperdiz/2024_02_Rmrkdn_Ciencia/images/slide_abertura_divulgacao.png",
+    image = "https://github.com/ricoperdiz/2024_02_Rmrkdn_Ciencia/blob/main/images/slide_abertura_divulgacao.png?raw=true",
     image_alt = paste(
       "Slide de abertura da palestra `Rmarkdown:",
       " comunicação, transparência e reprodutibilidade`,",
