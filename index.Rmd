@@ -83,7 +83,7 @@ meta() |>
       "apresentada dentro da disciplina de 'Comunicação Científica' ministrada pelo professor Dr. Reinaldo Imbrozio Barbosa (INPA)",
       "e ofertada no Programa de Pós-graduação em Recursos Naturais (PRONAT) da Universidade Federal de Roraima."
     ),
-    url = "https://2024_02_rmrkdn_ciencia.netlify.app",
+    url = "https://rmrkdn-ciencia-reprodutib-2024-02.netlify.app",
     image = "https://github.com/ricoperdiz/2024_02_Rmrkdn_Ciencia/images/slide_abertura_divulgacao.png",
     image_alt = paste(
       "Slide de abertura da palestra `Rmarkdown:",
@@ -114,6 +114,9 @@ background-size: cover
 
 ]
 
+???
+
+Imagem da parte direita do slide de abertura obtida de <https://rmarkdown.rstudio.com/>
 ---
 
 name: sou-eu
